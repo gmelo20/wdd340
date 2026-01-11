@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/_head') %>
+</head>
+<body>
+    <%- include('partials/_header') %>
+    <%- include('partials/_navigation') %>
+
+    <main class="container">
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Welcome to CSE Motors!</h2>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h3>DMC Delorean</h3>
+            <ul class="features">
+                <li>3 Cup holders</li>
+                <li>Superman doors</li>
+                <li>Fuzzy dice</li>
+            </ul>
+            <!-- Usando own_today.png como botão -->
+            <a href="#" class="btn-primary">
+                <img src="/images/site/own_today.png" alt="Own Today" class="btn-image">
+            </a>
+        </div>
+        <div class="hero-image">
+            <!-- Usando delorean.jpg -->
+            <img src="/images/vehicles/delorean.jpg" alt="DMC Delorean">
+        </div>
+    </div>
+</section>
+
+ <!-- Upgrades Section -->
+<section class="upgrades">
+    <h3>Delorean Upgrades</h3>
+    <div class="upgrades-grid">
+        <div class="upgrade-item">
+            <img src="/images/upgrades/flux-cap.png" alt="Flux Capacitor" class="upgrade-img">
+            <h4>Flux Capacitor</h4>
+        </div>
+        <div class="upgrade-item">
+            <img src="/images/upgrades/hub-cap.jpg" alt="Hub Caps" class="upgrade-img">
+            <h4>Hub Caps</h4>
+        </div>
+        <div class="upgrade-item">
+            <img src="/images/upgrades/flame.jpg" alt="Flame Decals" class="upgrade-img">
+            <h4>Flame Decals</h4>
+        </div>
+        <div class="upgrade-item">
+            <img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers" class="upgrade-img">
+            <h4>Bumper Stickers</h4>
+        </div>
+    </div>
+</section>
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <h3>DMC Delorean Reviews</h3>
+            <div class="reviews-list">
+                <blockquote>
+                    <p>"So fast it's almost like traveling in time."</p>
+                    <footer>4/5</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"Coolest ride on the road."</p>
+                    <footer>4/5</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"I'm feeling McFly!"</p>
+                    <footer>5/5</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"The most futuristic ride of our day."</p>
+                    <footer>4.5/5</footer>
+                </blockquote>
+                <blockquote>
+                    <p>"80's livin and I love it!"</p>
+                    <footer>5/5</footer>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/_footer') %>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

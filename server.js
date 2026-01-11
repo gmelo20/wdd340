@@ -1,30 +1,44 @@
-/* ******************************************
- * This server.js file is the primary file of the 
- * application. It is used to control the project.
- *******************************************/
-/* ***********************
- * Require Statements
- *************************/
-const express = require("express")
-const env = require("dotenv").config()
-const app = express()
-const static = require("./routes/static")
+const express = require('express');
+const path = require('path');
 
-/* ***********************
- * Routes
- *************************/
-app.use(static)
+const app = express();
+const PORT = process.env.PORT || 3000;  // ⬅️ IMPORTANTE: 3000, não 5500
 
-/* ***********************
- * Local Server Information
- * Values from .env (environment) file
- *************************/
-const port = process.env.PORT
-const host = process.env.HOST
+// Configurar EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-/* ***********************
- * Log statement to confirm server operation
- *************************/
-app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`)
-})
+// Servir arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota principal
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+// Rotas para outras páginas
+app.get('/custom', (req, res) => {
+    res.render('custom', { title: 'Custom Vehicles' });
+});
+
+app.get('/sedan', (req, res) => {
+    res.render('sedan', { title: 'Sedan Vehicles' });
+});
+
+app.get('/suv', (req, res) => {
+    res.render('suv', { title: 'SUV Vehicles' });
+});
+
+app.get('/truck', (req, res) => {
+    res.render('truck', { title: 'Truck Vehicles' });
+});
+
+app.listen(PORT, () => {
+    console.log('='.repeat(60));
+    console.log('🚗 CSE Motors Website');
+    console.log(`📡 Servidor rodando: http://localhost:${PORT}`);
+    console.log(`📁 Views: ${path.join(__dirname, 'views')}`);
+    console.log(`📁 Public: ${path.join(__dirname, 'public')}`);
+    console.log('='.repeat(60));
+    console.log('\nPara parar o servidor: Ctrl+C\n');
+});
